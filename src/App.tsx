@@ -1,9 +1,9 @@
-import UserList from "./components/UserList";
+import MainComponent from "./components/MainComponent";
 
 const App = (): JSX.Element => {
   return (
     <>
-      <UserList />
+      <MainComponent />
     </>
   );
 };

@@ -1,0 +1,11 @@
+@media (max-width: 1000px) {
+  .fixed-card {
+    transform: translate(150px, 10px);
+  }
+}
+
+@media (max-width: 600px) {
+  .fixed-card {
+    transform: translate(310px, 10px);
+  }
+}
