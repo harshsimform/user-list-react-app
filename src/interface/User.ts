@@ -1,5 +1,5 @@
 export interface User {
-  id: string;
+  _id: string;
   first_name: string;
   last_name: string;
   email: string;
@@ -14,5 +14,5 @@ export interface User {
   removable: string;
   createdAt: string;
   updatedAt: string;
-  v: number;
+  __v: number;
 }
