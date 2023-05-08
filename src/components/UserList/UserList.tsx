@@ -1,15 +1,11 @@
 import Active from "../../assets/lock.svg";
 import Lock from "../../assets/trash.svg";
-import { User } from "../../interface/User";
-import { useDispatch, useSelector } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../../redux/store";
 import { addUser, removeUser } from "../../redux/HoverUserSlice/HoverUserSlice";
-import { UserState } from "../../redux/UserSlice/UserSlice";
 
 const UserList = (): JSX.Element => {
-  const users: User[] = useSelector(
-    (state: { data: UserState }) => state.data.users
-  );
-  const dispatch = useDispatch();
+  const users = useAppSelector((state) => state.data.users);
+  const dispatch = useAppDispatch();
   return (
     <>
       <div className="w-full lg:w-5/12 md:w-4/12">
@@ -22,7 +18,7 @@ const UserList = (): JSX.Element => {
               <th className="text-left text-lg p-4 font-bold"></th>
             </tr>
           </thead>
-          {users.map((user: User) => (
+          {users.map((user) => (
             <tbody key={user.id}>
               <tr>
                 <td
