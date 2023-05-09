@@ -7,16 +7,15 @@ import { useEffect } from "react";
 import {
   fetchUsers,
   selectUsers,
-  selectStatus,
-  selectError,
   selectCurrentPage,
+  selectStatus,
 } from "../../redux/UserSlice/UserSlice";
+import PageNotFoundImg from "../../../public/page-not-found.gif";
 
 const UserList = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const users = useAppSelector(selectUsers);
   const status = useAppSelector(selectStatus);
-  const error = useAppSelector(selectError);
   const currentPage = useAppSelector(selectCurrentPage);
 
   useEffect(() => {
@@ -32,8 +31,17 @@ const UserList = (): JSX.Element => {
   }
 
   if (status === "failed") {
-    return <div>Error: {error}</div>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <img
+          className="object-cover h-48 w-96"
+          src={PageNotFoundImg}
+          alt="Page Not Found"
+        />
+      </div>
+    );
   }
+
   return (
     <>
       <div className="w-full lg:w-5/12">

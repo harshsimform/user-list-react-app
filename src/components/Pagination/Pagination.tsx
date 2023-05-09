@@ -5,11 +5,16 @@ import {
   selectCurrentPage,
   selectTotalPage,
 } from "../../redux/UserSlice/UserSlice";
+import Test from "./Test";
 
 const Pagination = (): JSX.Element => {
   const dispatch = useAppDispatch();
   const currentPage = useAppSelector(selectCurrentPage);
   const totalPage = useAppSelector(selectTotalPage);
+
+  const handlePageChange = (page: number) => {
+    dispatch(fetchUsers(page));
+  };
 
   const handlePrevClick = () => {
     if (currentPage > 0) {
@@ -18,7 +23,7 @@ const Pagination = (): JSX.Element => {
   };
 
   const handleNextClick = () => {
-    if (currentPage < totalPage - 1) {
+    if (currentPage < totalPage) {
       dispatch(fetchUsers(currentPage + 1));
     }
   };
@@ -64,26 +69,11 @@ const Pagination = (): JSX.Element => {
           </button>
         </div>
         <div className="sm:flex">
-          {/* <button className="text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-400 pt-3 mr-4 px-2">
-            {currentPage - 2}
-          </button>
-          <button className="text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-400 pt-3 mr-4 px-2">
-            {currentPage - 1}
-          </button> */}
-          {currentPage > 1 && (
-            <button className="text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-400 pt-3 mr-4 px-2">
-              {currentPage - 1}
-            </button>
-          )}
-          <button className="text-sm font-medium leading-none cursor-pointer text-indigo-700 border-t border-indigo-400 pt-3 mr-4 px-2">
-            {currentPage}
-          </button>
-          <button className="text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-400 pt-3 mr-4 px-2">
-            {currentPage + 1}
-          </button>
-          <button className="text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-400 pt-3 mr-4 px-2">
-            {currentPage + 2}
-          </button>
+          <Test
+            currentPage={currentPage}
+            totalPage={totalPage}
+            onPageChange={handlePageChange}
+          />
         </div>
         <div className="flex items-center pt-3 text-gray-600 hover:text-indigo-700 cursor-pointer">
           <button

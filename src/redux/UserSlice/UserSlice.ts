@@ -15,7 +15,7 @@ const initialState: UserState = {
   status: "idle",
   error: null,
   currentPage: 0,
-  totalPages: 8,
+  totalPages: 0,
 };
 
 export const fetchUsers = createAsyncThunk(
