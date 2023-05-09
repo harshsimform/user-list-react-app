@@ -20,7 +20,7 @@ const UserList = (): JSX.Element => {
           </thead>
           {users.map((user) => (
             <tbody key={user.id}>
-              <tr>
+              <tr className="hover:bg-slate-50">
                 <td
                   className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap cursor-pointer"
                   key={user.id}
