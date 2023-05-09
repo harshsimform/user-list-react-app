@@ -9,6 +9,7 @@ import {
   selectUsers,
   selectStatus,
   selectError,
+  selectCurrentPage,
 } from "../../redux/UserSlice/UserSlice";
 
 const UserList = (): JSX.Element => {
@@ -16,13 +17,18 @@ const UserList = (): JSX.Element => {
   const users = useAppSelector(selectUsers);
   const status = useAppSelector(selectStatus);
   const error = useAppSelector(selectError);
+  const currentPage = useAppSelector(selectCurrentPage);
 
   useEffect(() => {
-    dispatch(fetchUsers());
-  }, [dispatch]);
+    dispatch(fetchUsers(currentPage));
+  }, [dispatch, currentPage]);
 
   if (status === "loading") {
-    return <div>Loading....</div>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        Loading...
+      </div>
+    );
   }
 
   if (status === "failed") {
@@ -30,7 +36,7 @@ const UserList = (): JSX.Element => {
   }
   return (
     <>
-      <div className="w-full lg:w-5/12 md:w-4/12">
+      <div className="w-full lg:w-5/12">
         <table className="table-auto w-full">
           <thead>
             <tr>
@@ -43,7 +49,7 @@ const UserList = (): JSX.Element => {
           {users &&
             users.map((user) => (
               <tbody key={user._id}>
-                <tr>
+                <tr className="hover:bg-slate-50">
                   <td
                     className="px-4 py-4 text-sm text-gray-500 dark:text-gray-300 whitespace-nowrap cursor-pointer"
                     key={user._id}
