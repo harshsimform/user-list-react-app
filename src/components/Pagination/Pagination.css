@@ -1,0 +1,12 @@
+.pagination > ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+li:first-child {
+  margin-right: auto;
+}
+
+ul li:last-child {
+  margin-left: auto;
+}

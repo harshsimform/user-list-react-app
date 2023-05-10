@@ -18,12 +18,14 @@ const initialState: UserState = {
   totalPages: 0,
 };
 
+const environment = import.meta.env;
+
 export const fetchUsers = createAsyncThunk(
   "users/fetchUsers",
   async (page: number, { rejectWithValue }) => {
     try {
       const response = await fetch(
-        `https://user-list-server-node.vercel.app/person/p?page=${page}&limit=8`
+        `https://user-list-server-node.vercel.app/person/p?page=${page}&limit=${environment.VITE_APP_USER_LIMIT}`
       );
       const data = await response.json();
       return data;
