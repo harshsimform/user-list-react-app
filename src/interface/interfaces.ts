@@ -16,3 +16,15 @@ export interface User {
   updatedAt: string;
   __v: number;
 }
+
+export interface UserState {
+  users: User[];
+  status: "idle" | "loading" | "succeeded" | "failed";
+  error: string | null;
+  currentPage: number;
+  totalPages: number;
+}
+
+export interface HoverUserState {
+  hoveredUser: User | null;
+}

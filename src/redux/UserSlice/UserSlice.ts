@@ -1,14 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { User } from "../../interface/User";
+import { UserState } from "../../interface/interfaces";
 import { RootState } from "../store";
-
-export interface UserState {
-  users: User[];
-  status: "idle" | "loading" | "succeeded" | "failed";
-  error: string | null;
-  currentPage: number;
-  totalPages: number;
-}
 
 const initialState: UserState = {
   users: [],

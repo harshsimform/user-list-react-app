@@ -10,7 +10,7 @@ import {
   selectCurrentPage,
   selectStatus,
 } from "../../redux/UserSlice/UserSlice";
-import PageNotFoundImg from "../../../public/page-not-found.gif";
+import PageNotFoundImg from "../../assets/page-not-found.gif";
 import Skeleton from "../Skeleton/Skeleton";
 
 const UserList = (): JSX.Element => {
@@ -89,7 +89,7 @@ const UserList = (): JSX.Element => {
                     </td>
                   ) : (
                     <td className="p-4 hover:text-gray-600">
-                      <div className="relative w-[140px] flex items-center">
+                      <div className="relative w-[140px] flex items-center ml-3">
                         <svg
                           className="absolute w-5 h-5 right-5"
                           viewBox="0 0 20 20"

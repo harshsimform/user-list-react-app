@@ -18,7 +18,7 @@ const Pagination = (): JSX.Element => {
 
   return (
     <>
-      <div className="pagination mb-10 border-t-2 border-indigo-100">
+      <div className="pagination lg:min-w-[38rem] mb-10 border-t-2 border-indigo-100">
         <ReactPaginate
           pageCount={totalPage}
           previousLabel={"⟵ Previous"}
@@ -28,12 +28,11 @@ const Pagination = (): JSX.Element => {
           pageRangeDisplayed={5}
           forcePage={currentPage}
           onPageChange={handlePageChange}
-          containerClassName={"flex sm:flex"}
           pageClassName={
-            "text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-400 pt-2 mr-3 mx-3 px-1"
+            "text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-600 pt-2 mr-3 mx-3 px-2"
           }
           activeClassName={
-            "text-sm font-medium leading-none cursor-pointer text-indigo-700 border-t border-indigo-500 pt-2 px-2"
+            "text-sm font-medium leading-none cursor-pointer text-indigo-700 border-t border-indigo-600 pt-2 px-2"
           }
           previousClassName={
             "text-sm text-indigo-700  font-medium leading-none pt-2 px-2"
