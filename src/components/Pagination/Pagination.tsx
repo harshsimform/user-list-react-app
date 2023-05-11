@@ -18,7 +18,7 @@ const Pagination = (): JSX.Element => {
 
   return (
     <>
-      <div className="pagination lg:min-w-[38rem] mb-10 border-t-2 border-indigo-100">
+      <div className="pagination lg:min-w-[38rem] mt-3 mb-10 border-t-2 border-indigo-100">
         <ReactPaginate
           pageCount={totalPage}
           previousLabel={"⟵ Previous"}
@@ -29,18 +29,19 @@ const Pagination = (): JSX.Element => {
           forcePage={currentPage}
           onPageChange={handlePageChange}
           pageClassName={
-            "text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-600 pt-2 mr-3 mx-3 px-2"
+            "text-sm font-medium leading-none cursor-pointer text-gray-600 hover:text-indigo-700 border-t border-transparent hover:border-indigo-500 pt-2 mx-3"
           }
+          breakClassName={"hover:text-indigo-700"}
           activeClassName={
-            "text-sm font-medium leading-none cursor-pointer text-indigo-700 border-t border-indigo-600 pt-2 px-2"
+            "activeClass text-sm font-medium leading-none cursor-pointer text-indigo-700 border-t border-indigo-700 pt-2"
           }
           previousClassName={
-            "text-sm text-indigo-700  font-medium leading-none pt-2 px-2"
+            "text-sm text-indigo-700 font-medium leading-none pt-2 px-2"
           }
           nextClassName={
             "text-sm text-indigo-700 font-medium leading-none pt-2 px-2"
           }
-          disabledClassName={"opacity-50 pointer-events-none"}
+          disabledClassName={"disabledClass pointer-events-none"}
         />
       </div>
     </>

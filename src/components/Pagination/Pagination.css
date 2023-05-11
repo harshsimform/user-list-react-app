@@ -10,3 +10,11 @@ li:first-child {
 ul li:last-child {
   margin-left: auto;
 }
+
+ul > .activeClass {
+  border-top: 1px solid rgb(67 56 202);
+}
+
+ul > .disabledClass {
+  color: rgb(156, 163, 175);
+}

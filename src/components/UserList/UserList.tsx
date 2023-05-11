@@ -89,7 +89,7 @@ const UserList = (): JSX.Element => {
                     </td>
                   ) : (
                     <td className="p-4 hover:text-gray-600">
-                      <div className="relative w-[140px] flex items-center ml-3">
+                      <div className="relative w-[140px] flex items-center">
                         <svg
                           className="absolute w-5 h-5 right-5"
                           viewBox="0 0 20 20"

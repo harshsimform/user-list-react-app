@@ -5,7 +5,7 @@ const Skeleton = (): JSX.Element => {
     <>
       <div className="h-24 rounded-md mt-5">
         <div className="flex animate-pulse flex-row items-center justify-between">
-          <div className="flex flex-row space-x-2 space-y-1 ml-4">
+          <div className="flex flex-row space-x-2 space-y-1 ml-5">
             <div className="w-20 h-3 bg-gray-300 rounded-md"></div>
             <div className="flex flex-col space-y-3"></div>
           </div>

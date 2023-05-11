@@ -8,7 +8,7 @@ export const store = configureStore({
     data: userSlice,
     hoverData: hoverUserSlice,
   },
-  devTools: true,
+  devTools: false,
 });
 
 // Getting the State type
